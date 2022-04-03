@@ -1,3 +1,4 @@
 #pragma once
 
-void circle();
+float circle_area(float*);
+void circle(char*);
