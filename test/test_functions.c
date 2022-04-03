@@ -1,7 +1,7 @@
 #include <ctest.h>
-#include <libgeo/triangle.h>
 #include <libgeo/circle.h>
 #include <libgeo/cross.h>
+#include <libgeo/triangle.h>
 #include <stdio.h>
 #define size_intersects 9
 #define size_circle_area 3
@@ -28,7 +28,6 @@ CTEST(geometry_suite, simple_intersection_1)
     int res = cross(intersects);
     ASSERT_EQUAL(exp, res);
 }
-
 
 CTEST(geometry_suite, simple_area_circle)
 {
