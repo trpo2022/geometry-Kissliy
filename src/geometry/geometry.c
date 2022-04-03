@@ -1,21 +1,27 @@
 #include "libgeo/circle.h"
 #include "libgeo/triangle.h"
-#include <math.h>
+#include <stdlib.h>
 #include <stdio.h>
+#include <time.h>
+#include <math.h>
+#include <string.h>
+#include <stdbool.h>
+#define size 256
 
 int main()
 {
-    int a;
-    printf("1. Cirle\n2. Triangle\nChoose your figure: ");
-    scanf(" %d", &a);
-    if (a == 1) {
-        circle();
-    }
-    if (a == 2) {
-        triangle();
-    } else {
-        printf("Error\n");
-        return 0;
-    }
-    return 0;
+	char str[size];
+    	FILE* input;
+    	if ((input = fopen("input.txt", "r")) == NULL) 
+    	{
+        	perror("Error. File not found.\n");
+        	return 1;
+    	}
+    	while ((fgets(str, size, input)) != 0) 
+    	{
+		if (str[0] == 'c') circle(str);
+       		if (str[0] == 't') triangle(str);
+    	}
+	return 0;
 }
+
