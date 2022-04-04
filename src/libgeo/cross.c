@@ -15,10 +15,8 @@ int cross(float all[])
     b = sqrt((x0 - x2) * (x0 - x2) + (y0 - y2) * (y0 - y2));
     c = sqrt((x0 - x3) * (x0 - x3) + (y0 - y3) * (y0 - y3));
     if (((a > r) && (b > r) && (b > r)) || ((a < r) && (b < r) && (c < r))) {
-        printf("\n\nFIGURES DON'T INTERSECT\n");
         return 1;
     } else {
-        printf("\n\nFIGURES INTERSECT\n");
         return 0;
     }
 }

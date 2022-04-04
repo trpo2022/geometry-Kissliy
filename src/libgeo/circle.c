@@ -37,24 +37,31 @@ void circle(char str[])
         printf("Error. Radius < 0.");
         _Exit(1);
     }
-    float rad = digit_circle[2];
+    for (i = 0; i < 3; i++) {
+        all[i + 6] = digit_circle[i];
+    }
     printf("%s\n\n", str);
     printf("AREA CIRCLE: %f\nPERIMETR CIRCLE: %f\n",
            circle_area(digit_circle),
-           rad + rad * M_PI);
-
-    cross(all);
+           circle_perimetr(digit_circle));
+    if (cross(all))
+        printf("\n\nFIGURES DON'T INTERSECT\n");
+    else {
+        printf("\n\nFIGURES INTERSECT\n");
+    }
 }
 
 float circle_area(float digit_circle[])
 {
     float area, rad;
-    int i;
     rad = digit_circle[2];
     area = rad * rad * M_PI;
-    for (i = 0; i < 3; i++) {
-        all[i + 6] = digit_circle[i];
-    }
-
     return area;
+}
+
+float circle_perimetr(float digit_circle[])
+{
+    float rad = digit_circle[2];
+    float perimetr = (rad + rad) * M_PI;
+    return perimetr;
 }
